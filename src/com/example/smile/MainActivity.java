@@ -13,6 +13,7 @@ public class MainActivity extends Activity {
 		
 		// Let the magic begin
 		// double trouble
+		//coment
 	}
 
 	@Override
