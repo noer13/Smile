@@ -16,12 +16,12 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
-import android.renderscript.Element;
 import android.util.Log;
 
 public class XMLParser {
@@ -94,8 +94,8 @@ public class XMLParser {
 	
 	
 	
-	public String getValue(Element item, String str) {      
-	    NodeList n = ((Document) item).getElementsByTagName(str);        
+	public String getValue(Element e, String str) {      
+	    NodeList n = e.getElementsByTagName(str);        
 	    return this.getElementValue(n.item(0));
 	}
 	 

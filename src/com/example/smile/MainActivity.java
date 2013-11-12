@@ -4,10 +4,12 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
+import org.w3c.dom.Node;
 
 import android.os.Bundle;
-import android.renderscript.Element;
+
 import android.app.Activity;
 import android.content.res.AssetManager;
 import android.view.Menu;
@@ -45,13 +47,9 @@ public class MainActivity extends Activity {
         			stream = manager.open(PATH);		
         			Document doc = parser.getDocument(stream);        			
         	        NodeList nl = doc.getElementsByTagName(KEY_ITEM);	
-        	        
         	        Element e = (Element) nl.item(0);        	        
         	        String joke = parser.getValue(e, KEY_DESC);
-        	        
-        	        //Element e = (Element) nl.item(0);
-        	        
-        	        //txt_test.setText(parser.getValue(doc.getElementById(1), KEY_DESC));
+        	        txt_test.setText(joke);
         	                
 
         		}catch(IOException e1){txt_test.setText("testing not good " + e1);}            	
