@@ -34,25 +34,25 @@ public class MainActivity extends Activity {
 		//coment
 		
 		final TextView txt_test = (TextView) findViewById(R.id.txt);
-		final Button button_info = (Button) findViewById(R.id.btn_next);
+		final Button button_next = (Button) findViewById(R.id.btn_next);
 		
-		button_info.setOnClickListener(new View.OnClickListener() {
+		button_next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
             	XMLParser parser = new XMLParser();		
         		AssetManager manager = getAssets();
         		InputStream stream;
         		try{
         			stream = manager.open(PATH);		
-        			Document doc = parser.getDocument(stream);			
+        			Document doc = parser.getDocument(stream);      
         			
-        	        NodeList nl = doc.getElementsByTagName(KEY_ITEM);			
-        	        Element e = (Element) nl.item(1);
-        	        String joke = parser.getValue(e, KEY_DESC);
-        	                	        
-        	        txt_test.setText(joke);
+        	        NodeList nl = doc.getElementsByTagName(KEY_ITEM);	
         	        
-        		}catch(IOException e1){txt_test.setText("testing not good " + e1);}
-            	
+        	        Element e = (Element) nl.item(0);        	        
+        	        String joke = parser.getValue(e, KEY_DESC);        	                	        
+        	        txt_test.setText(joke);
+        	                
+
+        		}catch(IOException e1){txt_test.setText("testing not good " + e1);}            	
             }
         });
 		
