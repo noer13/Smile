@@ -37,29 +37,35 @@ public class MainActivity extends Activity {
 		
 		final TextView txt_test = (TextView) findViewById(R.id.txt);
 		final Button button_next = (Button) findViewById(R.id.btn_next);
+		txt_test.setText(getJoke(0));
 		
 		button_next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-            	XMLParser parser = new XMLParser();		
-        		AssetManager manager = getAssets();
-        		InputStream stream;
-        		try{
-        			stream = manager.open(PATH);		
-        			Document doc = parser.getDocument(stream);        			
-        	        NodeList nl = doc.getElementsByTagName(KEY_ITEM);	
-        	        Element e = (Element) nl.item(0);        	        
-        	        String joke = parser.getValue(e, KEY_DESC);
-        	        txt_test.setText(joke);
-        	                
-
-        		}catch(IOException e1){txt_test.setText("testing not good " + e1);}            	
+            	String sIndex = txt_test.getText().toString(); 
+    	        sIndex = sIndex.substring(0,sIndex.indexOf('/'));
+    	        int index = Integer.parseInt(sIndex);    	        
+    	        txt_test.setText(getJoke(index));
             }
-        });
-		
-		
-                
+        });      
 	}
 
+	public final String getJoke(int index) {
+		XMLParser parser = new XMLParser();		
+		AssetManager manager = getAssets();
+		InputStream stream;
+		try {			
+			stream = manager.open(PATH);		
+			Document doc = parser.getDocument(stream);        			
+	        NodeList nl = doc.getElementsByTagName(KEY_ITEM);
+	        index = index % nl.getLength();
+            Element e = (Element) nl.item(index);
+            String joke = parser.getValue(e, KEY_DESC);
+            return index + 1 + "/" + nl.getLength() + " " + joke;
+		} catch(IOException e1) {
+			return "testing not good " + e1;
+		}
+	}
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

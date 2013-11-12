@@ -12,9 +12,14 @@
         android:id="@+id/btn_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="16dp"
+=======
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+>>>>>>> 7a546ac80e74a5849de66654ff793e514ae2fdaa
         android:text="@string/btn_next" />
 
     <TextView
