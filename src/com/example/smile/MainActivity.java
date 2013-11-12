@@ -43,13 +43,15 @@ public class MainActivity extends Activity {
         		InputStream stream;
         		try{
         			stream = manager.open(PATH);		
-        			Document doc = parser.getDocument(stream);      
-        			
+        			Document doc = parser.getDocument(stream);        			
         	        NodeList nl = doc.getElementsByTagName(KEY_ITEM);	
         	        
         	        Element e = (Element) nl.item(0);        	        
-        	        String joke = parser.getValue(e, KEY_DESC);        	                	        
-        	        txt_test.setText(joke);
+        	        String joke = parser.getValue(e, KEY_DESC);
+        	        
+        	        //Element e = (Element) nl.item(0);
+        	        
+        	        //txt_test.setText(parser.getValue(doc.getElementById(1), KEY_DESC));
         	                
 
         		}catch(IOException e1){txt_test.setText("testing not good " + e1);}            	
