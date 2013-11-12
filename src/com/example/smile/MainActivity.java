@@ -37,33 +37,57 @@ public class MainActivity extends Activity {
 		
 		final TextView txt_test = (TextView) findViewById(R.id.txt);
 		final Button button_next = (Button) findViewById(R.id.btn_next);
-		txt_test.setText(getJoke(0));
+		final TextView txt_number = (TextView) findViewById(R.id.txt_number);
+		final TextView txt_title = (TextView) findViewById(R.id.txt_title);
 		
-		button_next.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-            	String sIndex = txt_test.getText().toString(); 
-    	        sIndex = sIndex.substring(0,sIndex.indexOf('/'));
-    	        int index = Integer.parseInt(sIndex);    	        
-    	        txt_test.setText(getJoke(index));
-            }
-        });      
-	}
-
-	public final String getJoke(int index) {
-		XMLParser parser = new XMLParser();		
+		final XMLParser parser = new XMLParser();		
 		AssetManager manager = getAssets();
 		InputStream stream;
 		try {			
 			stream = manager.open(PATH);		
 			Document doc = parser.getDocument(stream);        			
-	        NodeList nl = doc.getElementsByTagName(KEY_ITEM);
-	        index = index % nl.getLength();
-            Element e = (Element) nl.item(index);
-            String joke = parser.getValue(e, KEY_DESC);
-            return index + 1 + "/" + nl.getLength() + " " + joke;
+	        final NodeList nodelist = doc.getElementsByTagName(KEY_ITEM);
+		
+		txt_number.setText(getID(nodelist, 0));
+		txt_title.setText(getTitle(nodelist,0,parser));
+		txt_test.setText(getJoke(nodelist,0,parser));
+		
+		
+		
+		button_next.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	String sIndex = txt_number.getText().toString(); 
+    	        sIndex = sIndex.substring(0,sIndex.indexOf('/'));
+    	        int index = Integer.parseInt(sIndex);    	        
+    	        txt_number.setText(getID(nodelist, index));
+    			txt_title.setText(getTitle(nodelist, index, parser));
+    			txt_test.setText(getJoke(nodelist, index, parser));
+            }
+        });
+		
 		} catch(IOException e1) {
-			return "testing not good " + e1;
+			txt_number.setText("Exeption");
+			txt_title.setText("Exeption");
+			txt_test.setText("testing not good " + e1);
 		}
+		
+	}
+
+	public final String getID(NodeList nodelist,int index) {
+		index = index % nodelist.getLength();
+		return index + 1 + "/" + nodelist.getLength();
+	}
+	
+	public final String getTitle(NodeList nodelist,int index, XMLParser parser) {
+		index = index % nodelist.getLength();
+		Element e = (Element) nodelist.item(index);
+		return parser.getValue(e, KEY_NAME);
+	}
+	
+	public final String getJoke(NodeList nodelist,int index, XMLParser parser) {
+		index = index % nodelist.getLength();
+		Element e = (Element) nodelist.item(index);
+		return parser.getValue(e, KEY_DESC);
 	}
 	
 	@Override
