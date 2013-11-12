@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <joke>
+	    <item>
+	        <id>1</id>    
+	        <name>joke1</name>        
+	        <description>123</description>
+	    </item>     
+	    <item>
+	        <id>2</id>    
+	        <name>joke2</name>        
+	        <description>321</description>
+	    </item>	    
+	 </joke>
+	
