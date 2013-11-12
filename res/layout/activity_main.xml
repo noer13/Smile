@@ -21,6 +21,6 @@
         android:layout_below="@+id/txt"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="14dp"
-        android:text="Next" />
+        android:text="@string/btn_next" />
 
 </RelativeLayout>
