@@ -1,0 +1,90 @@
+[33mcommit 9f8240ec025953523685f113f43309ee2d58ceb8[m
+Author: Yuriy Protskiv <iquadre@gmail.com>
+Date:   Tue Nov 12 21:24:32 2013 +0200
+
+    added localization and landscape mode
+
+[33mcommit 45324102cdaa24254ee3698447b421d179315cfe[m
+Author: Bilovus Dmytro <digi.te.ua@gmail.com>
+Date:   Tue Nov 12 20:12:59 2013 +0200
+
+    fuck jeah. bug fixed
+
+[33mcommit 597199d0be62a06e46090cee60a5920390e6f533[m
+Merge: 975a1c2 275b6e7
+Author: Bilovus Dmytro <digi.te.ua@gmail.com>
+Date:   Tue Nov 12 19:28:45 2013 +0200
+
+    Merge branch 'master' of https://github.com/noer13/Smile
+
+[33mcommit 975a1c20066bc190befdd8895b65d8910fd892d1[m
+Author: Bilovus Dmytro <digi.te.ua@gmail.com>
+Date:   Tue Nov 12 19:26:56 2013 +0200
+
+    laino
+
+[33mcommit 275b6e7036485ebf821191335c665415b75b8195[m
+Author: Jeksonic <jeksonic@gmail.com>
+Date:   Tue Nov 12 19:23:36 2013 +0200
+
+    jokes.xml
+
+[33mcommit 92fd036eab4b05fd235c63f8b0ac4129b14a14ed[m
+Author: Bilovus Dmytro <digi.te.ua@gmail.com>
+Date:   Tue Nov 12 19:05:55 2013 +0200
+
+    added XMLParser, jokes/xml, MainActivity btn onclick()
+
+[33mcommit aa35da61dbda1bfd91e4d5bd4a706bf94ec05323[m
+Author: Bilovus Dmytro <digi.te.ua@gmail.com>
+Date:   Tue Nov 12 18:15:39 2013 +0200
+
+    added XMLParser.java, jokes.xml, edited MainActivity.java
+
+[33mcommit 6ed691233d23063b3390face9b67e5d9fd6e0612[m
+Author: chuhrainka <chuhrainka@gmail.com>
+Date:   Tue Nov 12 01:15:35 2013 +0200
+
+    Romnt
+
+[33mcommit bb069832e441929b7f8140b3df975da5dc6061b7[m
+Author: Bilovus Dmytro <digi.te.ua@gmail.com>
+Date:   Mon Nov 11 22:24:38 2013 +0200
+
+    test
+
+[33mcommit a5deac68dcbe1cb9061e205473dfa238b2023250[m
+Author: Yuriy Protskiv <iquadre@gmail.com>
+Date:   Mon Nov 11 22:05:05 2013 +0200
+
+    added new app icon for all dpi
+
+[33mcommit f78f637c05a7d56407ab0d4b2a17c33ebf52e0e7[m
+Author: Yuriy Protskiv <iquadre@gmail.com>
+Date:   Mon Nov 11 21:30:04 2013 +0200
+
+    added new app icon for all dpi
+
+[33mcommit 0dfb158fdec32f41007b42529aae9990b5ee2131[m
+Author: Jeksonic <jeksonic@gmail.com>
+Date:   Mon Nov 11 21:12:45 2013 +0200
+
+    Test Commit
+
+[33mcommit 9bf5b40f159b7dcadcf825b5abe48ab23e0604ed[m
+Author: noer13 <iquadre@gmail.com>
+Date:   Mon Nov 11 20:42:49 2013 +0200
+
+    added team info and description of problem
+
+[33mcommit 125656f565c806355f1f18bdf0c46220664cbbf7[m
+Author: noer13 <iquadre@gmail.com>
+Date:   Mon Nov 11 20:26:03 2013 +0200
+
+    added android project
+
+[33mcommit e074eaab590274f1bffd88041573b85f98c07f89[m
+Author: Yuriy Protskiv <iquadre@gmail.com>
+Date:   Mon Nov 11 10:07:37 2013 -0800
+
+    Initial commit
