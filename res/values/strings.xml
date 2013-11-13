@@ -2,8 +2,7 @@
 <resources>
 
     <string name="app_name">Смайл</string>
-    <string name="action_settings">Налаштування</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Налаштування</string>    
     <string name="btn_next">Наступний</string>
 
 </resources>

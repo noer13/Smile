@@ -6,7 +6,6 @@ import java.io.InputStream;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
-import org.w3c.dom.Node;
 
 import android.os.Bundle;
 
@@ -19,8 +18,7 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 	
-	static final String PATH = "jokes.xml";
-    // XML node keys
+	static final String PATH = "jokes.xml";    
     static final String KEY_ITEM = "item"; // parent node
     static final String KEY_ID = "id";
     static final String KEY_NAME = "name";    
@@ -30,11 +28,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
-		// Let the magic begin
-		// double trouble
-		//coment
-		
+				
 		final TextView txt_test = (TextView) findViewById(R.id.txt);
 		final Button button_next = (Button) findViewById(R.id.btn_next);
 		final TextView txt_number = (TextView) findViewById(R.id.txt_number);

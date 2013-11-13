@@ -2,19 +2,11 @@ package com.example.smile;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.StringReader;
-import java.io.UnsupportedEncodingException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.util.EntityUtils;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -26,6 +18,7 @@ import android.util.Log;
 
 public class XMLParser {
 	
+	/*
 	public String getXmlFromUrl(String url) {
         String xml = null;
  
@@ -49,26 +42,6 @@ public class XMLParser {
         return xml;
     }
 
-	public Document getDocument(InputStream inputStream) {
-	        Document document = null;
-	        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-	        try {
-	            DocumentBuilder db = factory.newDocumentBuilder();
-	            InputSource inputSource = new InputSource(inputStream);
-	            document = db.parse(inputSource);
-	        } catch (ParserConfigurationException e) {
-	            Log.e("Error: ", e.getMessage());
-	            return null;
-	        } catch (SAXException e) {
-	            Log.e("Error: ", e.getMessage());
-	            return null;
-	        } catch (IOException e) {
-	            Log.e("Error: ", e.getMessage());
-	            return null;
-	        }
-	        return document;
-	    }
-	
 	public Document getDomElement(String xml){
         Document doc = null;
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -91,8 +64,27 @@ public class XMLParser {
                 // return DOM
             return doc;
     }
+	*/
 	
-	
+	public Document getDocument(InputStream inputStream) {
+	        Document document = null;
+	        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+	        try {
+	            DocumentBuilder db = factory.newDocumentBuilder();
+	            InputSource inputSource = new InputSource(inputStream);
+	            document = db.parse(inputSource);
+	        } catch (ParserConfigurationException e) {
+	            Log.e("Error: ", e.getMessage());
+	            return null;
+	        } catch (SAXException e) {
+	            Log.e("Error: ", e.getMessage());
+	            return null;
+	        } catch (IOException e) {
+	            Log.e("Error: ", e.getMessage());
+	            return null;
+	        }
+	        return document;
+	    }
 	
 	public String getValue(Element e, String str) {      
 	    NodeList n = e.getElementsByTagName(str);        
